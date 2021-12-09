@@ -53,15 +53,15 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send message data.
     # Fill in start
-    message_data = 'Subject This is not SPAM\r\n''
-    clientSocket.send(message_data.encode())
+    # message_data = 'Subject This is not SPAM\r\n''
+    clientSocket.send(msg.encode())
     # Fill in end
 
     # Message ends with a single period.
     # Fill in start
-    clientSocket.send(message_data.encode())
-    message_end = '.\r\n'
-    clientSocket.send(message_end.decode())
+    clientSocket.send(endmsg.encode())
+    message_end = clientSocket.recv(1024).decode()
+    #print(message_end)
     # Fill in end
 
     # Send QUIT command and get server response.
