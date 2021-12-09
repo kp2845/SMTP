@@ -40,7 +40,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in start - Send receipt address
     receipt = 'RCPT TO:<kairipurnell@gmail.com>\r\n'
     clientSocket.send(receipt.encode())
-    receivereceipt = clientSocket.recv(1024).decode())
+    receivereceipt = clientSocket.recv(1024).decode()
     # print(recceiverreceipt)
     # Fill in end
 
